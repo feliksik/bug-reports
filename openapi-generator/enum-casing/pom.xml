@@ -30,7 +30,7 @@
                             <validateSpec>true</validateSpec>
 
                             <!-- pom spec -->
-                            <groupId>com.ecg.comaas.mailtemplateapi</groupId>
+                            <groupId>com.test.api</groupId>
                             <artifactId>dto</artifactId>
 
                             <!-- do not use api/supporting files: we have broken oneOf support, and we do not (yet) support the required libs -->
@@ -40,8 +40,8 @@
 
                             <language>java</language>
                             <configOptions>
-                                <modelPackage>com.ecg.comaas.mailtemplateapi.dto</modelPackage>
-                                <apiPackage>com.ecg.comaas.mailtemplateapi.api</apiPackage>
+                                <modelPackage>com.test.api.dto</modelPackage>
+                                <apiPackage>com.test.api</apiPackage>
                                 <interfaceOnly>true</interfaceOnly>
                                 <dateLibrary>java8</dateLibrary>
                             </configOptions>
