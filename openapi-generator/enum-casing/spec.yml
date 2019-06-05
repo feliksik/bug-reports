@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  description: enum test
+  version: 1.0.0
+  title: test
+paths:
+  /test:
+    get:
+      summary: nothing
+      description: nothing
+      operationId: doSomething
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+
+components:
+  schemas:
+    Response:
+      required:
+        - action
+      properties:
+        action:
+          type: string
+          enum: [
+            "CamelCasedThing1",
+            "CamelCasedThing2"
+          ]
