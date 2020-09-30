@@ -1,6 +1,6 @@
 # dropwizard NPE problem
 
-Reported as https://github.com/dropwizard/dropwizard/issues/3221 . 
+Reported as https://github.com/dropwizard/dropwizard/issues/3221 . **SEE THAT THREAD FOR THE FIX**
 
 This setup is based on https://www.dropwizard.io/en/latest/manual/testing.html 
 
