@@ -10,7 +10,7 @@
 
     <properties>
       <!-- openapi-generator 4.0.1 is broken: https://github.com/OpenAPITools/openapi-generator/issues/3070 -->
-      <openapi-generator.version>4.0.0</openapi-generator.version>
+      <openapi-generator.version>5.1.0</openapi-generator.version>
     </properties>
     <build>
         <plugins>
