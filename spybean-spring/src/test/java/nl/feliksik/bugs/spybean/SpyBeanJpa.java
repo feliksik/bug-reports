@@ -1,7 +1,9 @@
 package nl.feliksik.bugs.spybean;
 
 import nl.feliksik.bugs.spybean.jpa.EntityJpaRepo;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -30,14 +32,16 @@ class SpyBeanJpa {
     public static class MyConfig {
     }
 
-    private final MyService systemUnderTest;
-
-    private final EntityJpaRepo jpaRepo;
+    @Autowired
+    private MyService systemUnderTest;
 
     @Autowired
-    public SpyBeanJpa(MyService systemUnderTest, EntityJpaRepo jpaRepo) {
-        this.systemUnderTest = systemUnderTest;
-        this.jpaRepo = jpaRepo;
+    private EntityJpaRepo jpaRepo;
+
+    @BeforeEach
+    void setUp() {
+        // workaround for https://github.com/spring-projects/spring-boot/issues/33830
+        //Mockito.reset(jpaRepo);
     }
 
     @Test
@@ -65,5 +69,4 @@ class SpyBeanJpa {
         // should be ok -- but it FAILS!
         systemUnderTest.upsert("someId");
     }
-
 }
